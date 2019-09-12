@@ -1,0 +1,10 @@
+
+#build docker
+docker build -t supark87/simpleweb .
+##port mapping
+#8080 to redirect 8080
+docker run -p 8080:8080 supark87/simpleweb
+#running in shell
+docker run -it supark87/simpleweb sh 
+
+#workdir /usr/app (command will be executed )
