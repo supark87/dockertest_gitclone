@@ -6,7 +6,7 @@ LABEL stage=intermediate
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
-RUN mkdir /lpsubpclones && cd /lpsubpclones && git clone https://github.com/supark87/lpsubp.git 
+#RUN mkdir /lpsubpclones && cd /lpsubpclones && git clone https://github.com/supark87/lpsubp.git 
 RUN git clone https://github.com/supark87/lpsubp.git 
 
 FROM ubuntu:18.04
@@ -41,7 +41,8 @@ RUN pip3 install -r /data/requirements1.txt
 
 #CMD ["python3", "/data/pipe.py","/data/test2/"]
 
-#ENTRYPOINT ["python3","/data/pipe.py"]
-# FROM biocontainers/biocontainers:latest AS build
 ENTRYPOINT ["python3","/data/pipe.py"]
-#docker run -it --mount src="$(pwd)",target=/usr/share/,type=bind gitclonetrial /usr/share/test3/
+#
+# FROM biocontainers/biocontainers:latest AS build
+#ENTRYPOINT ["python3"]
+#docker run -it -v $(pwd):/usr/share gitclonetrial /usr/share/test3/
