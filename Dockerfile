@@ -1,8 +1,6 @@
 FROM ubuntu:18.04 as intermediate
 LABEL stage=intermediate
 
-# COPY . /data/
-# WORKDIR /data/
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
